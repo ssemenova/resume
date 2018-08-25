@@ -1,0 +1,109 @@
+% LaTeX resume using res.cls
+\documentclass{res}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+
+\usepackage{hyperref} 
+\usepackage{enumitem}
+\usepackage[margin=.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\setlength{\parskip}{.5em}
+\hypersetup{backref,  
+	pdfpagemode=FullScreen,  
+	colorlinks=true} 
+\def\labelitemi{--}
+\setlist[itemize]{topsep=2pt, itemsep=0pt, parsep=2pt, before=\vspace{-4mm},after=\vspace{0mm}}
+\setlength{\textwidth}{7.2in} % set width of text portion
+
+\begin{document}
+
+ \moveleft.5\hoffset\centerline{\namefont Sofiya Semenova}
+ \smallskip
+ \moveleft.5\hoffset\centerline{\href{sofiya@sofiya.io}{sofiya@sofiya.io} ~ \href{https://sofiya.io}{https://sofiya.io} ~ \href{http://github.com/ssemenova}{http://github.com/ssemenova ~ \href{https://www.linkedin.com/in/novasofiya/}{https://www.linkedin.com/in/novasofiya/}}}
+
+
+\vspace{-3mm}
+
+\begin{resume}
+
+
+\section{EDUCATION}
+
+\textbf{Ph.D. student, Computer Science} ~ University at Buffalo, Buffalo, NY \hfill Aug 2018 - current
+
+\textbf{B.S. (high honors)} ~ Brandeis University, Waltham, MA \hfill Aug 2013 - May 2017 \\
+	Major: Computer Science, Minor: Physics \\
+	Thesis: \href{https://sofiya.io/media/thesis.pdf}{\sl “Clouds That Think: Applications of Machine Learning Techniques for Elastic Databases"}
+
+\section{EXPERIENCE}
+
+\textbf{Graduate Teaching Assistant} ~ University at Buffalo, Buffalo, NY \hfill Aug 2018 - current \\ 
+	\begin{itemize}  \itemsep -2pt %reduce space between items
+	\item Graduate TA for {\sl Data Structures} 
+	\end{itemize}
+
+
+\textbf{Software Engineer and Software Engineering Intern} ~ edX, Cambridge, MA \hfill Jun 2016 - Aug 2016, \\ 
+	\begin{itemize}  \itemsep -2pt %reduce space between items
+	\item Full time engineer from June 2017 - Aug 2018, summer intern in 2016 \hfill Jun 2017 - Aug 2018
+	\item Improved the functionality of VEDA, edX's video encoding and delivery pipeline
+	\item Increased user engagement through the creation of a completion API
+	\item Improved accessibility of the edX platform for screen-reader and keyboard-only users
+	\item {\sl Linux, AWS (RDS, ec2, SNS), Terraform, Docker, Python, SQL, MongoDB, Django, \\ 
+		Javascript}
+	\end{itemize}
+
+\textbf{Web Developer Team Lead} ~ Brandeis University MakerLab, Waltham, MA  \hfill Apr 2015 - May 2017 \\
+	\begin{itemize}  \itemsep -2pt %reduce space between items
+	\item Designed the websites and promotional material for the MakerLab and affiliated events
+	\item Created a relational schema design, a user interface to access, search, and modify data,  \\
+	and a data visualization dashboard for the Brandeis Western Jihadism Project
+	\item {\sl Python, Django, postgres, Jekyll, Google Charts, Adobe (Photoshop, \\ 
+		Illustrator, InDesign)}
+	\end{itemize}
+		
+\textbf{Software Engineering Intern} ~ Onshape, Cambridge, MA \hfill Jun 2015 - Aug 2015 \\ 
+	\begin{itemize}  \itemsep -2pt %reduce space between itemsA
+	\item Added admin tools to the Onshape web app
+	\item Expanded automated end-to-end UI tests
+	\item {\sl AngularJS, Javascript}
+	\end{itemize}
+	
+\textbf{Undergraduate Teaching Assistant} ~ Brandeis University, Waltham, MA \hfill Sept 2014 - Dec 2014 \\ 
+	\begin{itemize}  \itemsep -2pt %reduce space between items
+	\item TA for {\sl Intro to Programming in Java}
+	\end{itemize}
+
+
+\section{SELECTED PROJECTS ~  {\sl \href{https://sofiya.io/projects}{https://sofiya.io/projects}}}
+
+\textbf{\href{https://sofiya.io/projects/tidal-8596-spotify-converter.html}{Tidal to Spotify converter}}, a set of utils to convert playlists and songs between Tidal and Spotify.  {\sl Python} 
+
+\textbf{\href{https://api.zotero.org/users/3604318/publications/items/35KTECTC/file/view}{NashDB}}, an application to automatically fragment, replicate, and provision elastic, cloud databases. {\sl Java }
+
+\textbf{\href{https://www.youtube.com/watch?v=YAKRxSoUs18&feature=youtu.be}{WiSDoM}}, a demo for WiSeDB, a machine learning approach to cost/performance management for cloud  databases. {\sl Java, Spark, vueJS}
+	
+\textbf{\href{https://sofiya.io/blog/turmite-art}{Cellular Ant-omata,}} a program to randomly generate cellular automata. {\sl Java}
+	
+\textbf{\href{https://sofiya.io/projects/edgar-allan-poetry.html}{Edgar Allan Poetry,}} a poetry generator using recurrent neural nets and Markov chains. Won Best  Artificial Intelligence Hack at HampHack. {\sl Python, vueJS}
+
+\section{LEADERSHIP}  
+
+\textbf{Computer Science Undergraduate Department Representative} \hfill Sep 2015 - May 2016 \\
+	Planned and coordinated departmental events for computer science majors.	
+
+\textbf{President of Brandeis' Computer Science Club and Hackathon Organizer} \hfill Sep 2014 - May 2016 \\
+	President of Brandeis' CS club. Lead designer and web developer for Brandeis' hackathon.
+	
+\section{PUBLICATIONS}             
+	 Ryan Marcus, Olga Papaemmanouil, Sofiya Semenova, and Solomon Garber. \href{https://api.zotero.org/users/3604318/publications/items/35KTECTC/file/view}{\sl “NashDB: An Economic Approach to Fragmentation, Replication and Provisioning for Elastic Databases."} 37th ACM Special Interest Group in Data Management (SIGMOD) 2018. \\
+	  Ryan Marcus, Sofiya Semenova, and Olga Papaemmanouil.\href{http://www.cs.brandeis.edu/~olga/publications/icde17-demo.pdf}{\sl “A Learning-based Service for Cost and Performance Management of Cloud Databases (Demonstration).”} IEEE International Conference on Data Engineering (ICDE) 2017.
+
+
+\end{resume}
+\end{document}
+
+
+
+
