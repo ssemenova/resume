@@ -279,7 +279,7 @@
 \newdimen\resumewidth
 
 \resumewidth=7in
-\sectionskip=2.5ex plus 1ex minus -.2ex % values stolen from LaTeX
+\sectionskip=2ex plus 1ex minus -.2ex % values stolen from LaTeX
 
 \def\newsectionwidth#1{%
 		     \sectionwidth=.2in
@@ -438,7 +438,7 @@
 %    the text next to it
 %
 \let\@@section\relax
-\def\ds@overlapped{\ifx\@@section\relax\newsectionwidth{0.5in}\let
+\def\ds@overlapped{\ifx\@@section\relax\newsectionwidth{01in}\let
   \@@section\unboxed@sectiontitle\fi}
 \def\ds@margin{\ifx\@@section\relax\newsectionwidth{1.3in}\let
   \@@section\boxed@sectiontitle\fi}
@@ -773,7 +773,7 @@
 \topmargin 0pt
 \headheight 0pt
 \headsep 0pt
-\textheight 9in
+\textheight 8in
 \parindent 0pt
 \topmargin 0in
 \oddsidemargin 0pt
@@ -784,7 +784,7 @@
 \setcounter{secnumdepth}{0}
 \def\@listI{\leftmargin\leftmargini
 \topsep 0pt 
-\parskip 0pt
+\parskip -5pt
 \partopsep 2pt plus 2pt
 \parsep 2pt plus 2pt
 \itemsep \parsep}
