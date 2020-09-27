@@ -234,11 +234,13 @@
 % this is used to print the name and address at the top of
 % the page with a hline in between
 %
-%
 \def\namefont{\LARGE\bf}
 \def\@linename{\begingroup
   \def\\{, }
   {\namefont\@name}
+  \vskip 2pt
+  \fullline
+  \vskip 2pt
   % where do you live?
   \@ifundefined{@addressone}{%
     % do nothing
@@ -278,11 +280,11 @@
 \newskip\sectionskip
 \newdimen\resumewidth
 
-\resumewidth=7in
-\sectionskip=2ex plus 1ex minus -.2ex % values stolen from LaTeX
+\resumewidth=6.5in
+\sectionskip=3.5ex plus 1ex minus -.2ex % values stolen from LaTeX
 
 \def\newsectionwidth#1{%
-		     \sectionwidth=.2in
+		     \sectionwidth=#1
 		     \textwidth=\resumewidth
 		     \advance\textwidth-\sectionwidth
 		     \hsize=\textwidth
@@ -438,9 +440,9 @@
 %    the text next to it
 %
 \let\@@section\relax
-\def\ds@overlapped{\ifx\@@section\relax\newsectionwidth{01in}\let
+\def\ds@overlapped{\ifx\@@section\relax\newsectionwidth{0.5in}\let
   \@@section\unboxed@sectiontitle\fi}
-\def\ds@margin{\ifx\@@section\relax\newsectionwidth{1.3in}\let
+\def\ds@margin{\ifx\@@section\relax\newsectionwidth{1.1in}\let
   \@@section\boxed@sectiontitle\fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -773,9 +775,9 @@
 \topmargin 0pt
 \headheight 0pt
 \headsep 0pt
-\textheight 8in
+\textheight 10in
 \parindent 0pt
-\topmargin 0in
+\topmargin -.5in
 \oddsidemargin 0pt
 \evensidemargin 0pt
 \marginparwidth 0pt
@@ -784,12 +786,13 @@
 \setcounter{secnumdepth}{0}
 \def\@listI{\leftmargin\leftmargini
 \topsep 0pt 
-\parskip -5pt
+\parskip 0pt
 \partopsep 2pt plus 2pt
 \parsep 2pt plus 2pt
 \itemsep \parsep}
 
-\pagestyle{empty}  % don't want page numbers
+%\pagestyle{empty}  % don't want page numbers
+\pagestyle{plain}  % if want page numbers
 
 \begin{format}
 \title{l}\employer{r}\\

@@ -1,145 +1,261 @@
-% LaTeX resume using res.cls
-\documentclass{res}
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+\documentclass[margin,line]{res}
+\usepackage[none]{hyphenat}
+\usepackage{hyperref, xcolor}
+\definecolor{bla}{RGB}{25 154 129}
 
-\usepackage{hyperref} 
-\usepackage{enumitem}
-\usepackage[margin=.4in]{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage[dvipsnames]{xcolor}
+\pagenumbering{gobble}
 
-\definecolor{niceGreen}{HTML}{e15a6c}
-\setlength{\parskip}{.4em}
-\hypersetup{backref,  
-	pdfpagemode=FullScreen,  
-	colorlinks = true,
-	linkcolor = niceGreen,
-	urlcolor  = niceGreen,
-	citecolor = niceGreen,
-	anchorcolor = niceGreen} 
-\def\labelitemi{--}
-\setlist[itemize]{topsep=2pt, itemsep=-1pt, parsep=1pt, before=\vspace{-4mm},after=\vspace{-2mm}}
-\setlength{\textwidth}{7.4in} % set width of text portion
+\hypersetup{
+    colorlinks = true,
+    linkcolor=bla,
+    urlcolor=bla
+}
+
+\oddsidemargin -.4in
+\evensidemargin -.4in
+\textwidth=6.2in
+\itemsep=0in
+\parsep=0in
+
+\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
 
 \begin{document}
 
- \moveleft.5\hoffset\centerline{\namefont Sofiya Semenova}
- \smallskip
- \moveleft.5\hoffset\centerline{\href{mailto:sofiya@sofiya.io}{sofiya@sofiya.io} ~ \href{https://sofiya.io}{https://sofiya.io} ~ \href{http://github.com/ssemenova}{https://github.com/ssemenova} ~ \href{https://www.linkedin.com/in/novasofiya/}{https://www.linkedin.com/in/novasofiya/}}
-
-
-\vspace{2mm}
+\name{Sofiya Semenova \vspace*{.05in}}
 
 \begin{resume}
+\section{\sc Contact Information}
+\vspace{.05in}
+\begin{tabular}{@{}p{2.5in}p{4in}}
+{\it Email:}  \href{sofiyase@buffalo.edu}{sofiyase@buffalo.edu} &  {\it Github:} \href{https://github.com/ssemenova}{https://github.com/ssemenova}\\ 
+{\it Website:} \href{https://sofiya.io}{https://sofiya.io} & {\it LinkedIn:} \href{https://linkedin.com/in/novasofiya}{https://linkedin.com/in/novasofiya} \\ 
+\end{tabular}
 
 
-\section{EDUCATION}
-\vspace{2mm}
-\textbf{Ph.D. Student, Computer Science} ~ University at Buffalo, Buffalo, NY \hfill 08/18 - current
+\section{\sc Education}
+{\bf University at Buffalo}, Buffalo, NY   \hfill {\bf Aug 2018 - present}
 
-\textbf{B.S. (High Honors)} ~ Brandeis University, Waltham, MA \hfill 08/13 - 05/17 \\
-	Major: Computer Science, Minor: Physics \\
-	Thesis: \href{https://sofiya.io/media/thesis.pdf}{\sl “Clouds That Think: Applications of Machine Learning Techniques for Elastic Databases"}
-\vspace{2mm}
+\vspace{-.4cm}
+{\em Ph.D. Student in Computer Science} \\
+Advised by Dr. Karthik Dantu
 
-\section{WORK EXPERIENCE}
-\vspace{2mm}
-\textbf{\large{University at Buffalo}}
-\vspace{1mm} \\
-\textbf{\textit{Graduate Research Assistant} }\hfill 08/19 - current \\
-	\begin{itemize}   \itemsep -1pt %reduce space between items
-	\item Balancing performance goals and resource constraints for real-time, vision-based localization \\
-	applications on mobile devices by using edge servers for prefetching localization and map data
-	\item C++, Java (Android)
-	\end{itemize}
-\textbf{\textit{Graduate Teaching Assistant}}  \hfill 08/18 - 05/19 \\ 
-	\begin{itemize}  \itemsep -1pt %reduce space between items
-	\item Data Structures - Fall 2018
-	\item Systems Programming - Spring 2019
-	\end{itemize}
-\vspace{3mm}
+{\bf Brandeis University}, Waltham, MA  \hfill {\bf Aug 2013 - May 2017}
 
-\textbf{\large{Google}} 
-\vspace{1mm} \\
-\textbf{\textit{Software Engineering Intern}} \hfill 06/19 - 08/19 \\
-	\begin{itemize}   \itemsep -1pt %reduce space between items
-	\item Developed and shipped a logistic regression model in Chrome to predictively prefetch the page(s) \\
-	that a user will likely navigate to next, to decrease user-perceived latency on mobile devices
-	\item C++, Python, Scikit-Learn, TensorFlow
-	\end{itemize}
-\vspace{3mm}
+\vspace{-.4cm}
+{\em Bachelor of Science in Computer Science, High Departmental Honors} \\
+Thesis: \textit{\href{https://sofiya.io/media/thesis.pdf}{``Clouds That Think: Applications of Machine Learning Techniques for Elastic Databases"}} \\
+Thesis advised by Dr. Olga Papaemmanouil \\
+Minor: Physics
 
-\textbf{\large{edX}}
-\vspace{1mm} \\
-\textbf{\textit{Software Engineer}} \hfill 06/17 - 08/18 \\ 
-	\begin{itemize}  \itemsep -1pt %reduce space between items
-	\item Improved the performance, reliability, and maintainability of VEDA, edX's video encoding \\
-		and delivery pipeline, mainly through the implementation of an API for AWS SNS notifications \\
-		for video processing tasks, creating a local testing environment with Docker, and parallelizing \\
-		video processing tasks
-	\item Developed an API that tracks and displays users' course completion data to increase user \\
-		first-week engagement, and ran A/B tests on proposed features to use the data 
-	\item Assisted with GDPR compliance
-	\item Mentored a summer intern
-	\item Linux, AWS (RDS, ec2, SNS), Terraform, Docker, Python, SQL, MongoDB, Django, Javascript
-	\end{itemize}
-\textbf{\textit{Software Engineering Intern}} \hfill 06/16 - 08/16 \\
-	\begin{itemize}  \itemsep -1pt %reduce space between items
-	\item Improved accessibility of the edX platform for screen-reader and keyboard-only users, \\
-		mainly through creating a new, entirely keyboard-accessible essay-writing module
-	\item Python, Django, Javascript
-	\end{itemize}
-\vspace{3mm}
 
-\textbf{\large{Brandeis University}}
-\vspace{1mm} \\
-\textbf{\textit{MakerLab Web Developer Team Lead}} \hfill 04/15 - 05/17 \\
-	\begin{itemize}  \itemsep -1pt %reduce space between items
-	\item Created a relational schema design, a user interface to access, search, and modify data, \\
-		and a data visualization dashboard for the Brandeis Western Jihadism Project
-	\end{itemize}
-\textbf{\textit{Undergraduate Teaching Assistant}} \hfill 09/14 - 12/14 \\
-	\begin{itemize}  \itemsep -1pt %reduce space between items
-	\item Introduction to Computer Science (required introductory Java course)
-	\end{itemize}
-\vspace{2mm}
 
-\section{PUBLICATIONS, WORKSHOPS, AND DEMOS}
-\vspace{2mm}
-	Ali J. Ben Ali, \textbf{Sofiya Semenova}, and Karthik Dantu.\href{https://dl.acm.org/citation.cfm?id=3309555}{\sl"Platform Variability in Edge-Cloud Vision Systems."} 20th International Workshop on Mobile Computing Systems and Applications (HotMobile 2019).
-	
-	 Ryan Marcus, Olga Papaemmanouil, \textbf{Sofiya Semenova}, and Solomon Garber. \href{https://api.zotero.org/users/3604318/publications/items/35KTECTC/file/view}{\sl “NashDB: An Economic Approach to Fragmentation, Replication and Provisioning for Elastic Databases."} 37th ACM Special Interest Group in Data Management (SIGMOD) 2018.
-	 
-	  Ryan Marcus, \textbf{Sofiya Semenova}, and Olga Papaemmanouil.\href{http://www.cs.brandeis.edu/~olga/publications/icde17-demo.pdf}{\sl “A Learning-based Service for Cost and Performance Management of Cloud Databases (Demonstration).”} IEEE International Conference on Data Engineering (ICDE) 2017.
 
-\section{LEADERSHIP}  
-\vspace{2mm}
-{Graduate Student Representative for the University at Buffalo's CSE Diversity Committee}  \hfill 12/19 - current \\
-{Secretary for University at Buffalo's Computer Science Graduate Student Association} \hfill 09/19 - current \\
-{Brandeis University's Computer Science Undergraduate Department Representative} \hfill 09/15 - 05/16 \\
-{President of Brandeis' Computer Science Club and Lead Hackathon Organizer} \hfill 09/14 - 05/16 
-\vspace{2mm}
+\section{\sc Peer-Reviewed Publications}
+     Ali J. Ben Ali, \textbf{Sofiya Semenova}, and Karthik Dantu. \href{https://dl.acm.org/doi/10.1145/3301293.3309555}{``Platform Variability in Edge-Cloud Vision Systems."} 20th International Workshop on Mobile Computing Systems and Applications. \\(HotMobile 2019)
+     
+     Ryan Marcus, Olga Papaemmanouil,  \textbf{Sofiya Semenova}, and Solomon Garber. \href{https://dl.acm.org/doi/10.1145/3301293.3309555}{``NashDB: An Economic Approach to Fragmentation, Replication and Provisioning for Elastic Databases."} 37th ACM Special Interest Group in Data Management 2018. (SIGMOD 2018) 
+     
+     Ryan Marcus,  \textbf{Sofiya Semenova}, and Olga Papaemmanouil. \href{https://www.cs.brandeis.edu/~olga/publications/icde17-demo.pdf} {``A Learning-based Service for Cost and Performance Management of Cloud Databases (Demonstration).”} IEEE International \\ Conference on Data Engineering (ICDE) 2017. (ICDE 2017)
 
-\section{SELECTED PROJECTS ~  {\sl \href{https://sofiya.io/projects}{https://sofiya.io/projects}}}
-\vspace{2mm}
-\textbf{Edge Place Detection}, an application to split a place detection algorithm between a client and an edge server. {\sl Java}
 
-\textbf{NashDB}, an application to automatically fragment, replicate, and provision elastic, cloud databases. {\sl Java }
+\section{\sc Teaching Experience}
+{\bf University at Buffalo}, Buffalo, NY 
 
-\textbf{WiSDoM}, a demo for WiSeDB, a machine learning approach for cost/performance management for cloud databases. {\sl Java}
-		
-\textbf{Edgar Allan Poetry,} a poetry generator using RNNs and Markov chains. Won Best Artificial Intelligence Hack at HampHack. {\sl Python}
-\vspace{2mm}
+\vspace{-.3cm}
+{\em Teaching Assistant} \hfill {\bf Sept 2018 - present}
+\begin{itemize}
+	\item[$-$] CSE 468/568 Robotics Algorithms --- Fall 2020
+	\item[$-$] CSE 220 Systems Programming --- Spring 2019
+	\item[$-$] CSE 250 Data Structures --- Fall 2018
+\end{itemize}
 
-\section{RELEVANT GRADUATE COURSEWORK}
-Introduction to Algorithms \\
-Robotics Algorithms \\
-Computer Vision and Image Processing \\
-Advanced Computer Vision Seminar \\
-Distributed Systems \\
-Database Management Systems \\
-Advanced Computer Systems \\
+%\begin{itemize}
+%  \setlength\itemsep{-.2em} 
+%  \item[$-$] Held office hours, answered Piazza questions, and graded assignments and tests
+%  \item[$-$] Created video tutorials in lieu of labs or recitations
+%\end{itemize}
+
+%\begin{itemize}
+%  \setlength\itemsep{-.2em} 
+%  \item[$-$] Held office hours, answered Piazza questions, and graded tests
+%  \item[$-$] Conducted two weekly lab sections
+%  \item[$-$] Led one-on-one tutoring sessions with students
+%\end{itemize}
+
+%\begin{itemize}
+%  \setlength\itemsep{-.2em} 
+%  \item[$-$] Held office hours, answered Piazza questions, and graded tests
+%  \item[$-$] Created lesson plans for and conducted two weekly recitations
+%\end{itemize}
+
+{\bf Brandeis University}, Waltham, MA 
+
+\vspace{-.3cm}
+{\em Teaching Assistant} \hfill {\bf Sept 2014 - Dec 2014}
+\begin{itemize}
+	\item[$-$] CS 11a Introduction to Computer Science --- Fall 2014
+\end{itemize}
+
+%\begin{itemize}
+%  \setlength\itemsep{-.2em} 
+%  \item[$-$] Mandatory first-year introductory Java course
+%  \item[$-$] Graded assignments and tests, and held 15-minute one-on-one sessions to review students' assignments
+%\end{itemize}
+
+
+
+\section{\sc Work Experience}
+{\bf Google}, Seattle, WA 
+
+\vspace{-.3cm}
+{\em Software Engineering Intern} \hfill {\bf Jun 2019 - Aug 2019}
+\begin{itemize}
+  \setlength\itemsep{-.2em}
+  \item[$-$] Developed a logistic regression model in Chrome to predictively prefetch the page(s) that a user will likely navigate to next, in order to decrease user-perceived latency on mobile devices
+  \item[$-$] \textit{C++, Python, Scikit-Learn, TensorFlow}
+\end{itemize}
+
+{\bf edX}, Cambridge, MA 
+
+\vspace{-.3cm}
+{\em Software Engineer} \hfill {\bf Jun 2017 - Aug 2018}
+\begin{itemize}
+  \setlength\itemsep{-.2em}
+  \item[$-$] Improved the performance, reliability, and maintainability of edX's video encoding and delivery pipeline, mainly by implementing an API for AWS SNS notifications for video processing tasks, creating a local testing environment with Docker, and parallelizing video processing tasks 
+  \item[$-$] Increased user first-week engagement by developing an API that tracks and displays user's course completion data and running A/B tests on features that use the data
+  \item[$-$] Assisted with GDPR compliance
+  \item[$-$] Trained and mentored a summer intern
+  \item[$-$] \textit{AWS \{RDS, ec2, SNS \}, Terraform, Docker, Python, SQL, MongoDB, Django, Javascript}
+\end{itemize}
+
+\vspace{-.3cm}
+{\em Software Engineering Intern} \hfill {\bf Jun 2016 - Aug 2016}
+\begin{itemize}
+  \setlength\itemsep{-.2em} 
+  \item[$-$] Improved accessibility of the edX platform for screen-reader and keyboard-only users, mainly through creating a new, entirely keyboard-accessible essay-writing module
+  \item[$-$] \textit{Python, Django, Javascript}
+\end{itemize}
+
+{\bf Brandeis University}, Waltham, MA 
+
+\vspace{-.3cm}
+{\em MakerLab Web Developer Team Lead} \hfill {\bf Sept 2018 - May 2019}
+\begin{itemize}
+  \setlength\itemsep{-.2em} 
+  \item[$-$] Designed, created, and maintained the MakerLab website, as well as websites and promotional materials for all MakerLab-sponsored events
+  \item[$-$] \textit{Jekyll, Adobe \{Photoshop, Illustrator, InDesign\}}
+\end{itemize}
+
+\vspace{-.3cm}
+{\em Software Engineer for the Western Jihadism Project} \hfill {\bf Apr 2015 - May 2018}
+\begin{itemize}
+  \setlength\itemsep{-.2em} 
+  \item[$-$] Created a relational schema design, a user interface to access, search, and modify data, and a data visualization dashboard for the Brandeis Western Jihadism Project
+    \item[$-$] \textit{Python, Django, postgres}
+\end{itemize}
+
+
+\section{\sc Leadership, Service, and Community Involvement} 
+{\bf University at Buffalo}, Buffalo, NY 
+
+%\vspace{-.3cm}
+%{\em Something something UB Living Stipend Movement } \hfill {\bf Sept 2020 - present}
+
+\vspace{-.3cm}
+{\em Web Chair --- SEMI at ACM Mobisys 2020 } \hfill {\bf Jun 2020} \\
+{\em (Workshop on Simplifying Edge and Mobile Intelligence)}
+
+
+\vspace{-.3cm}
+{\em Graduate Student Representative --- Computer Science } \hfill {\bf Dec 2019 - Sept 2020}\\
+{\em and Engineering Diversity Committee}
+
+\vspace{-.3cm}
+{\em Secretary --- Computer Science and Engineering} \hfill {\bf Sept 2019 - May 2020} \\
+{\em Graduate Student Association}
+
+\vspace{-.3cm}
+{\em Conducted K-12 Programming Tutorials at UB Robotics Day } \hfill {\bf Oct 2018} 
+
+%{\bf edX}, Cambridge, MA 
+
+%\vspace{-.3cm}
+%{\em ``Clean Code" Book Club Organizer} \hfill  {\bf Jan 2018 - May 2018}
+
+{\bf Brandeis University}, Waltham, MA 
+
+\vspace{-.3cm}
+{\em Microsoft Senior Student Partner } \hfill  {\bf Sept 2016 - May 2017}
+
+\vspace{-.3cm}
+{\em Microsoft Student Partner } \hfill  {\bf Dec 2015 - May 2016}
+
+\vspace{-.3cm}
+{\em Undergraduate Department Representative --- Computer } \hfill  {\bf Sept 2015 - May 2016} \\
+{\em Science Department}
+
+\vspace{-.3cm}
+{\em President --- BITMAP (Computer Science Club)} \hfill  {\bf Sept 2014 - May 2016}
+
+\vspace{-.3cm}
+{\em Lead Hackathon Organizer, Web Developer, and Designer ---} \hfill {\bf Sept 2014 - May 2016} \\
+{\em Codestellation (Brandeis' Annual Hackathon)}
+
+\section{\sc Honors and Awards} 
+ACM MobiCom Mentorship Program, 2020
+
+\vspace*{-2.5mm}
+ACM/IEEE SEC (Symposium on Edge Computing) Travel Grant, 2019
+
+\vspace*{-2.5mm}
+Brandeis Departmental High Honors, 2017
+
+
+
+\section{\sc Selected Projects} 
+ \textbf{\href{https://github.com/ssemenova/raft}{RRaft}} , an implementation of Raft, a distributed consensus algorithm. \textit{Rust}
+ 
+ \vspace*{-2.5mm}
+ \textbf{Real-Time Video QA}, an application to perform the video question answering task on a real-time video stream. \textit{Python}
+ 
+\vspace*{-2.5mm}
+ \textbf{\href{https://sofiya.io/media/trackerlessAR.pdf}{Edge-Assisted Trackerless Augmented Reality}}, an application to split a place detection algorithm between a client and an edge server. \textit{Java}
+
+\vspace*{-2.5mm}
+\textbf{\href{https://dl.acm.org/doi/abs/10.1145/3183713.3196935}{NashDB}}, an application to automatically fragment, replicate, and provision elastic, cloud databases. \textit{Java}
+
+\vspace*{-2.5mm}
+ \textbf{\href{https://www.cs.brandeis.edu/~olga/publications/icde17-demo.pdf}{WiSDoM}}, a demo for WiSeDB, a machine learning approach for cost/performance management for cloud databases.  \textit{Java}
+ 
+\vspace*{-2.5mm}
+ \textbf{\href{https://github.com/RyanMarcus/EdgarAllanPoetry}{Edgar Allan Poetry}}, a poetry generator using RNNs and Markov chains. Won Best Artificial Intelligence Hack at HampHack. \textit{Python}
+ 
+%\section{\sc Relevant Coursework} 
+%\vspace{.05in}
+%\begin{tabular}{@{}p{3in}p{3.5in}}
+%{\bf Graduate Coursework} & {\bf Undergraduate Coursework} \\
+%Introduction to Algorithms  & Discrete Structures\\
+%Robotics Algorithms & Operating Systems\\
+%Computer Vision and Image Processing & Structure and Interpretation of Computer Programs\\
+%Advanced Computer Vision Seminar & Introduction to the Theory of Computation\\ 
+%Distributed Systems & Principles of Computer System Design\\
+%Database Management Systems & Topics in Computational Cognitive Science\\
+%Advanced Computer Systems & Artificial Life\\
+%Advanced Concepts in Programming Languages\\
+%\end{tabular}
+
 \end{resume}
 \end{document}
 
